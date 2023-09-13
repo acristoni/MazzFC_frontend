@@ -3,14 +3,14 @@ import mock from "../mock/mockData"
 
 export default function Header() {
     return (
-        <header className="App-header">
-            <div className="App-header-container">
+        <header className="App-header Template-container">
+            <div className="Flex">
             <p>
                 <strong>Agile Content</strong> Frontend test
             </p>
             </div>
-            <div className="App-header-container">
-                <DotsNine size={32} />
+            <div className="Flex">
+                <DotsNine size={32} style={{ cursor: 'pointer'}}/>
                 <img 
                     src={mock.mockAvatarUrl} 
                     alt='avatar'

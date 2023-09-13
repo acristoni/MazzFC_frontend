@@ -3,10 +3,12 @@ import './App.css';
 import mock from './mock/mockData'
 import { Animal } from './interfaces/animal.interface';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import MainHomePage from './components/MainHomePage';
 
 function App() {
   const [animals, setAnimals] = useState<Animal[]>([])
-  console.log("🚀 ~ file: App.tsx:9 ~ App ~ animals:", animals)
+  const [searchWord, setSearchWord] = useState<string>("")
 
   useEffect(()=>{
     const allAnimals = mock.mockData;
@@ -16,12 +18,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main className="Main-homepage">
-
-      </main>
-      <footer className='App-footer'>
-
-      </footer>
+      <MainHomePage 
+        searchWord={searchWord}
+        setSearchWord={setSearchWord}
+      />
+      <Footer />
     </div>
   );
 }
