@@ -18,4 +18,6 @@ const mockData = [...new Array(100)].map((item, index) => {
     });
 });
 
-export default mockData;
+const mockAvatarUrl = faker.image.avatar();
+
+export default { mockData, mockAvatarUrl };

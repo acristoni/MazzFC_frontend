@@ -1,34 +1,27 @@
 import { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import mockData from './mock/mockData'
+import mock from './mock/mockData'
 import { Animal } from './interfaces/animal.interface';
+import Header from './components/Header';
 
 function App() {
   const [animals, setAnimals] = useState<Animal[]>([])
   console.log("🚀 ~ file: App.tsx:9 ~ App ~ animals:", animals)
 
   useEffect(()=>{
-    const allAnimals = mockData;
+    const allAnimals = mock.mockData;
     setAnimals(allAnimals);
   },[])
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main className="Main-homepage">
+
+      </main>
+      <footer className='App-footer'>
+
+      </footer>
     </div>
   );
 }

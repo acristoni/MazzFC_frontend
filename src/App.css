@@ -14,14 +14,29 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #ffffff;
+  min-height: 20px;
+  font-size: 15px;
+  padding-inline: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  color: #000000;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.App-header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  margin-left: 16px;
 }
 
 .App-link {
