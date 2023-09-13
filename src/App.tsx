@@ -9,6 +9,7 @@ import MainHomePage from './components/MainHomePage';
 function App() {
   const [animals, setAnimals] = useState<Animal[]>([])
   const [searchWord, setSearchWord] = useState<string>("")
+  const [isSearchPage, setIsSearchPage] = useState<boolean>(false)
 
   useEffect(()=>{
     const allAnimals = mock.mockData;
@@ -17,11 +18,21 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <MainHomePage 
+      <Header 
+        setIsSearchPage={setIsSearchPage}
         searchWord={searchWord}
         setSearchWord={setSearchWord}
+        isSearchPage={isSearchPage}
       />
+      {
+        isSearchPage ?
+        <></> :
+        <MainHomePage 
+          searchWord={searchWord}
+          setSearchWord={setSearchWord}
+          setIsSearchPage={setIsSearchPage}
+        />
+      }
       <Footer />
     </div>
   );

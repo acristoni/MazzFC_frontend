@@ -3,7 +3,11 @@ import { searchInput as IsearchInput } from '../interfaces/searchInput.interface
 import SearchButton from './SearchButton'
 import SearchInput from './SearchInput'
 
-export default function MainHomePage({ searchWord, setSearchWord }: IsearchInput) {
+interface Props extends IsearchInput {
+    setIsSearchPage: (value: boolean) => void;
+}
+
+export default function MainHomePage({ searchWord, setSearchWord, setIsSearchPage }: Props) {
     return (
         <main className="Main-homepage">
             <img 
@@ -14,7 +18,7 @@ export default function MainHomePage({ searchWord, setSearchWord }: IsearchInput
                 searchWord={searchWord}
                 setSearchWord={setSearchWord}
             />
-            <SearchButton />
+            <SearchButton setIsSearchPage={setIsSearchPage}/>
         </main>
     )
 }

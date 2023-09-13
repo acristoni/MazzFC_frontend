@@ -4,6 +4,7 @@
 
 .Template-container {
   width: 98.4vw;
+  height: 52px;
   min-height: 20px;
   font-size: 15px;
   padding-inline: 15px;
@@ -55,13 +56,11 @@
   height: 32px;
   min-width: 350px;
   max-width: 600px;
-  width: 70vw;
   display: flex;
   align-items: center;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
   padding: 5px 20px;
-  margin-top: 20px;
 }
 
 .Search-input {
