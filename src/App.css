@@ -33,6 +33,12 @@
   align-items: center;
 }
 
+.Flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
 .Avatar {
   height: 32px;
   width: 32px;
@@ -89,4 +95,9 @@
 .Search-button:active {
   background-color: #b6b6b6b6;
   color: gray;
+}
+
+.Main-searchpage {
+  padding-top: 20px;
+  padding-inline: 6vw;
 }
