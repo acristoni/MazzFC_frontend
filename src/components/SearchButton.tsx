@@ -9,6 +9,7 @@ export default function SearchButton({ setIsSearchPage }: Props) {
         <button 
             className="Search-button" 
             onClick={()=>handleSearchButton(setIsSearchPage)}
+            id="SearchButton"
         >
             BUSCAR
         </button>

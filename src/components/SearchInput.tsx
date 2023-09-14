@@ -32,6 +32,7 @@ export default function SearchInput({ searchWord, setSearchWord, isSearchPage }:
               className="Search-input"
               onChange={e=>setSearchWord(e.target.value)}
               value={searchWord}
+              id="SearchInput"
             />
             {
                 showX &&

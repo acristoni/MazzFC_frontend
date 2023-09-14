@@ -16,7 +16,7 @@ export default function SearchDetails({ selectedAnimal, isNotMobile = false }: P
                         src={selectedAnimal.image}
                         alt="detail info"
                     />
-                    <p style={{ color: "gray" }}>{selectedAnimal.url}</p>
+                    <p style={{ color: "gray" }} id="UrlDetail">{selectedAnimal.url}</p>
                     <p className="Title-search-details">{selectedAnimal.title}</p>
                     <p style={{ textAlign: 'start' }}>{selectedAnimal.description}</p>
                 </>
