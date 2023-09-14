@@ -1,12 +1,16 @@
 import { Animal } from "../interfaces/animal.interface"
+import Result from "./Result";
 
 type Props = {
     animals: Animal[];
 }
 
 export default function SearchResults({ animals }: Props) {
-    console.log("🚀 ~ file: SearchResults.tsx:8 ~ SearchResults ~ animals:", animals)
     return(
-        <></>
+        <>
+            {
+                animals.map(animal => <Result key={animal.id} info={animal}/>)
+            }
+        </>
     )
 }
