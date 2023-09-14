@@ -7,7 +7,13 @@ type Props = {
 
 export default function SearchDetails({ selectedAnimal, isNotMobile = false }: Props ) {
     return (
-        <div className="Search-details" style={{ marginLeft: !isNotMobile ? 0 : '30px' }}>
+        <div 
+            className="Search-details" 
+            style={{ 
+                marginLeft: !isNotMobile ? 0 : '30px',
+                marginRight: !isNotMobile ? 0 : '6vw'
+            }}
+        >
             {
                 selectedAnimal &&
                 <>
