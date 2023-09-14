@@ -5,12 +5,14 @@ import SearchDetails from "./SearchDetails";
 import Modal from "./Modal";
 import useModal from "../hooks/useModal";
 import useIsMobile from "../hooks/useIsMobile";
+import Skeleton from "./Skeleton";
 
 type Props = {
     animals: Animal[];
+    isLoading: boolean;
 }
 
-export default function SearchResults({ animals }: Props) {
+export default function SearchResults({ animals, isLoading }: Props) {
     const [isChangingScreen, setIsChangingScreen] = useState<boolean>(false)
     const [showDetailsLargeScreen, setShowDetailsLargeScreen] = useState<boolean>(false)
     const [selectedAnimal, setSelectedAnimal] = useState<Animal>()
@@ -61,28 +63,38 @@ export default function SearchResults({ animals }: Props) {
     },[isOpen])
 
     return(
-        <div className="Flex" style={{ alignItems: 'start' }}>
+        <>
             <Modal 
                 isOpen={isOpen} 
                 selectedAnimal={selectedAnimal} 
                 toggle={toggle}
             />
-            <div className="Flex-column Padding-left">
             {
-                animals.map(animal => <Result 
-                    key={animal.id} 
-                    info={animal} 
-                    setSelectedAnimal={setSelectedAnimal}
-                />)
+                isLoading ?
+                <div className="Flex-column Padding-left">
+                    {
+                        animals.map(() => <Skeleton />)
+                    }
+                </div> :
+                <div className="Flex" style={{ alignItems: 'start' }}>
+                    <div className="Flex-column Padding-left">
+                    {
+                        animals.map(animal => <Result 
+                            key={animal.id} 
+                            info={animal} 
+                            setSelectedAnimal={setSelectedAnimal}
+                        />)
+                    }
+                    </div>
+                    {
+                        showDetailsLargeScreen &&
+                        <SearchDetails 
+                            selectedAnimal={selectedAnimal}
+                            isNotMobile
+                        />
+                    }
+                </div>
             }
-            </div>
-            {
-                showDetailsLargeScreen &&
-                <SearchDetails 
-                    selectedAnimal={selectedAnimal}
-                    isNotMobile
-                />
-            }
-        </div>
+        </>
     )
 }

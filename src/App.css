@@ -159,3 +159,20 @@
   background: white;
   margin-top: -300px;
 }
+
+.Skeleton-bar {
+  height: 26px;
+  margin-bottom: 12px;
+  animation: shine 2s linear infinite; 
+  background: linear-gradient(90deg, transparent 0%, darkgray 50%, transparent 100%);
+  background-size: 200% 100%; 
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

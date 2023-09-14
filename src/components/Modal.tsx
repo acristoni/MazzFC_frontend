@@ -17,7 +17,7 @@ export default function Modal(props: ModalType) {
                 props.isOpen && (
                 <div 
                     className="Modal-overlay" 
-                    style={{ height: appHeight === "100vh" ? "100vh" : `${appHeight}px` }} 
+                    style={{ height: typeof appHeight === "string" ? "100vh" : `${appHeight * 1.1}px` }} 
                     onClick={props.toggle}
                 >
                     <div  className="Modal-box">
