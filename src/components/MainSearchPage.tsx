@@ -9,7 +9,6 @@ interface Props {
 }
 
 export default function MainSearchPage({ animals, searchWord }: Props) {
-    console.log("🚀 ~ file: MainSearchPage.tsx:12 ~ MainSearchPage ~ animals:", animals)
     return (
         <main className="Main-searchpage">
             {

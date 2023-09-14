@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { Animal } from "../interfaces/animal.interface";
 
-export default function Result({ info }: { info: Animal }) {
+type Props = {
+    info: Animal; 
+    setSelectedAnimal: (value: Animal) => void;
+}
+
+export default function Result({ info, setSelectedAnimal }: Props) {
     const [isHover, setIsHover] = useState<boolean>(false)
 
     return (
@@ -9,6 +14,7 @@ export default function Result({ info }: { info: Animal }) {
             className="Result" 
             onMouseEnter={()=>setIsHover(true)} 
             onMouseLeave={()=>setIsHover(false)}
+            onClick={()=>setSelectedAnimal(info)}
         >
             <p>{info.url}</p>
             <p 
