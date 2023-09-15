@@ -18,11 +18,6 @@ You will also see any lint errors in the console.
 
 After deploying this application on your localhost, execute the following command to run end-to-end tests using the Cypress framework. It will open a browser, and when you run the test, you will be able to observe the automated testing process, which checks if the application is running smoothly.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
